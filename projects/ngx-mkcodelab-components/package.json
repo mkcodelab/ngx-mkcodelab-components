@@ -8,8 +8,5 @@
   "dependencies": {
     "tslib": "^2.3.0"
   },
-  "sideEffects": false,
-  "devDependencies": {
-    "tailwindcss": "^3.4.7"
-  }
+  "sideEffects": false
 }

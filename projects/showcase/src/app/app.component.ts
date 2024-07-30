@@ -4,18 +4,19 @@ import {
   ModalComponent,
   ModalConfig,
   ModalService,
-  NgxMkcodelabComponentsComponent,
+  RadialMenuComponent,
 } from 'ngx-mkcodelab-components';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgxMkcodelabComponentsComponent, ModalComponent],
+  imports: [RouterOutlet, ModalComponent, RadialMenuComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
   title = 'showcase';
+  radialMenuOpen = false;
 
   modalSvc = inject(ModalService);
 
@@ -26,5 +27,10 @@ export class AppComponent {
   //   move it to the library (to component)
   get isModalOpen() {
     return this.modalSvc.isOpen;
+  }
+
+  toggleRadialMenu(to: boolean) {
+    console.log('toggled', to);
+    this.radialMenuOpen = to;
   }
 }

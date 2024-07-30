@@ -1,6 +1,6 @@
-<h1>MKCodelab UI Library Showcase</h1>
-<mkcodelab-components></mkcodelab-components>
-<button class="p-2 bg-neutral-400"
+<p class="mt-4 mb-4 p-4 text-2xl text-white cursor-pointer">MKCodelab UI Library Showcase</p>
+
+<button class="p-2 mt-4 bg-neutral-400"
         (click)="openModal(modal, {title: 'Modal'})">openModal</button>
 
 <!-- must be at the app level -->
@@ -11,3 +11,34 @@
 <ng-template #modal>
     Modal body works!
 </ng-template>
+
+<div class="mt-10 flex justify-center bg-neutral-200">
+    <p class="p-2">Radial menu:</p>
+    <div>
+
+        <button class="p-2 bg-neutral-400"
+                (click)="toggleRadialMenu(true)">
+            openMenu
+
+        </button>
+
+        @if(radialMenuOpen) {
+
+        <radial-menu [radius]="80"
+                     [hasBackdrop]="true">
+            <button #outerCircleItems
+                    class="text-white bg-neutral-600 hover:bg-neutral-400 ">longer text
+                test</button>
+            <button #outerCircleItems
+                    class="text-white bg-neutral-600 hover:bg-neutral-400 rounded-full w-10 h-10">testing text</button>
+            <button #outerCircleItems
+                    class=" text-white bg-neutral-600 hover:bg-neutral-400 rounded-full"
+                    (click)="toggleRadialMenu(false)">click here to close</button>
+            <button #innerCircleItems>inner circle</button>
+
+        </radial-menu>
+        }
+    </div>
+
+
+</div>
