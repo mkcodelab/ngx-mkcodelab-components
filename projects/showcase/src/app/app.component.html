@@ -1,0 +1,13 @@
+<h1>MKCodelab UI Library Showcase</h1>
+<mkcodelab-components></mkcodelab-components>
+<button class="p-2 bg-neutral-400"
+        (click)="openModal(modal, {title: 'Modal'})">openModal</button>
+
+<!-- must be at the app level -->
+@if(isModalOpen) {
+<modal-container></modal-container>
+}
+
+<ng-template #modal>
+    Modal body works!
+</ng-template>
